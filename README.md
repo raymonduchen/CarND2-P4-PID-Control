@@ -76,7 +76,7 @@ If current speed exceeds target speed or steer angle is too large ( |steering| >
 
 If current speed doesn't reach target speed and steer angle is small  ( |steering| <= 0.25 ), the throttle should be increased. The throttle is designed to be proportional to absolutely difference between target speed and current speed. Also, the throttle value is modulated related to steering value (when higher steer angle is, lower throttle is). In the end, the final throttle value is limited by 0.4 to prevent too large throttle.
 
-`throttle = abs(Target_Speed - CurrentSpeed) * (1.01 - abs(Steer));`
+`throttle = abs(target_speed - current_speed) * (1.01 - abs(Steer));`
 
 `throttle = min(0.4, throttle);`
 
