@@ -47,15 +47,18 @@ The vehicle oscillates more with higher porportional coefficient Kp, oscillates 
 
 For example, P controller is demonstrated in the following video. Kp = 0.2 and Kp = 0.4 show different oscillation behavior. Higher Kp shows higher oscillation.
 
-* Kp = 0.2
+Kp = 0.2
+
 ![alt text][image2]
 
-* Kp = 0.4
+Kp = 0.4
+
 ![alt text][image3]
 
 Another PD controller is dmonstrated with Kp = 0.4 and Kd = 1.0 in the following video. Obviously, deviation component mitigates the oscillation when it's compared with P controller.
 
-* Kp = 0.4 and Kd = 1.0
+Kp = 0.4 and Kd = 1.0
+
 ![alt text][image4]
 
 
@@ -67,11 +70,11 @@ Since human beings drive through curve lane with relatively low speed, the throt
 
 Therefore, I designed the following method to control the throttle :
 
-* If current speed exceeds target speed or steer angle is too large ( |steering| > 0.25 ), the throttle should be lessened. The lessened throttle is set as 0.15 by trial and error.
+If current speed exceeds target speed or steer angle is too large ( |steering| > 0.25 ), the throttle should be lessened. The lessened throttle is set as 0.15 by trial and error.
 
 `throttle = 0.15`
 
-* If current speed doesn't reach target speed and steer angle is small  ( |steering| <= 0.25 ), the throttle should be increased. The throttle is designed to be proportional to absolutely difference between target speed and current speed. Also, the throttle value is modulated related to steering value (when higher steer angle is, lower throttle is). In the end, the final throttle value is limited by 0.4 to prevent too large throttle.
+If current speed doesn't reach target speed and steer angle is small  ( |steering| <= 0.25 ), the throttle should be increased. The throttle is designed to be proportional to absolutely difference between target speed and current speed. Also, the throttle value is modulated related to steering value (when higher steer angle is, lower throttle is). In the end, the final throttle value is limited by 0.4 to prevent too large throttle.
 
 `throttle = abs(Target_Speed - CurrentSpeed) * (1.01 - abs(Steer));`
 
