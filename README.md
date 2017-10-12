@@ -16,8 +16,6 @@
 
   https://github.com/udacity/self-driving-car-sim/releases/
 
-The goals / steps of this project are shown as below:
-
 [//]: # (Image References)
 [image1]: ./images/p.gif
 [image2]: ./images/p1.gif
@@ -64,7 +62,7 @@ Kp = 0.4 and Kd = 1.0
 
 ## Parameter setting and hyperparameter design
 
-I started with Kp = 0.2 ~ 0.4. The vehicle oscillates heavily when Kp is large. Then I added Kd = 1.0 to mitigate the oscillation. After tried some parameters' setting, I found out it's still difficult to steer enough to pass through the curve lane while keeping the following oscillation small at high speed.
+I started with Kp = 0.2 ~ 0.4. The vehicle oscillates heavily when Kp is large. Then I added Kd = 1.0 to mitigate the oscillation. After tried some parameters' settings, I found it's still difficult to steer enough to pass through the curve lane while keeping the following oscillation small at high speed.
 
 Since human beings drive through curve lane with relatively low speed, the throttle may be better controlled related to steer angle and current speed.
 
